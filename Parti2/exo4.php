@@ -1,3 +1,10 @@
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "CSS.css">
+        
+    </head>
 <h1>Exercice 4</h1>
 <p>
 A partir de l’exercice 2, ajouter une colonne supplémentaire dans le tableau HTML qui contiendra 

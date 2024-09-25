@@ -1,3 +1,12 @@
+<html>
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "CSS.css">
+        
+    </head>
+    <body>
 <h1>Exercice 10</h1>
 <p>
 En utilisant l’ensemble des fonctions personnalisées crées précédemment, créer un formulaire 
@@ -9,8 +18,9 @@ Le formulaire devra également comporter un bouton permettant de le soumettre à
 </p>
 <h2> Resultat </h2>
 
-<div> <h3>D'inscription Formulaire</h3>
+<div class="form-container"> 
     <form method="post" action="">
+    <h3>D'inscription Formulaire</h3>
 
         <label for="nom"> Nom :</label>
         <input type="texte" id="nom" name="nom" required><br><br>
@@ -42,9 +52,8 @@ Le formulaire devra également comporter un bouton permettant de le soumettre à
         <input type="submit" value="Soumettre">
     </form>
 </div>
-
-
-
+</body>
+</html>
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
