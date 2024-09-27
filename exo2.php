@@ -7,5 +7,4 @@ contenus dans celle-ci.
 
 <?php 
 $phrase = "Notre formation DL commence aujourd'hui";
-$nombre_de_mots = str_word_count($phrase);
-echo "La phrase « Notre formation DL commence aujourd'hui » contient : ". $nombre_de_mots . "mots";
+echo "La phrase « Notre formation DL commence aujourd'hui » contient : ". str_word_count($phrase) . "mots";

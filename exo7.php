@@ -13,17 +13,15 @@ Si la catégorie n’est pas gérée, merci de le préciser.
 <?php 
 
 function determinerCategorie($age){
-    if ($age >= 6 && $age <=7){
-        return "Poussin";
-        
-    }elseif ($age >= 8 && $age <= 9){
-        return "Pupille";
 
-    }elseif ($age >= 10 && $age <= 11){
-        return "Minime";
-
-    }elseif ($age <= 12){
+    if ($age >= 12) {
         return "Cadet";
+    } elseif ($age >= 10) {
+        return "Minime";
+    } elseif ($age >= 8) {
+        return "Pupille";
+    } elseif ($age >= 6) {
+        return "Poussin";
 
     }else {
         return "Catégorie non gérée";
