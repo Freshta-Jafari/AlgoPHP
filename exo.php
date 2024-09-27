@@ -33,9 +33,6 @@ $totalTTC = $nbArticles * $prixHT * $nbArticles + $prixHT * $totalTVA;
 $totalTTC2 = $nbArticles * $prixHT * $nbArticles *(1 + $tauxTVA);
 echo "La total TTC est de $totalTTC euros <br>";
 
-$texte = "texte";
-$calcul = $texte - 5;
-echo $calcul;
 
 // revoie le type de la variables
 echo gettype($texte);
@@ -172,24 +169,24 @@ $clients = [
     "Stephane" => [
         "Adresse"=> "10 rue de la Gare",
         "CP"=> "67000",
-        "vILLE"=> "Strasbourg",
+        "Ville"=> "Strasbourg",
         "Tel"=> "0835846853",
     ],
 
     "Freshta" => [
         "Adresse"=> "5 rue Jacob Mayer",
         "CP"=> "67200",
-        "vILLE"=> "Strasbourg",
+        "Ville"=> "Strasbourg",
         "Tel"=> "0876746543",
     ],
 ];
- var_dump($clients);
+ //var_dump($clients);
 
-echo $clients["Stephane"]["CP"]." ".$clients["Stephane"]["Ville"];
+//echo $clients["Stephane"]["CP"]." ".$clients["Stephane"]["Ville"];
 
 foreach($clients as $prenom => $coordonnes){
-    echo ucfirst($prenom)."habite".$coordonnes["adresse"]." ".$coordonnes['CP']." ".
-    $coordonnes["ville"]."et a comme No de telephone :  ".$coordonnes["tel"]."<br>";
+    echo ucfirst($prenom)."  habite  ".$coordonnes["Adresse"]." ".$coordonnes['CP']." ".
+    strtoupper($coordonnes["Ville"]) . "  et a comme No de telephone :  ".$coordonnes["Tel"]."<br>";
 }
 
 // Fonctions
