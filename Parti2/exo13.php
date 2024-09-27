@@ -82,6 +82,8 @@ véhicule.
 
 <?php
 
+
+
 class Voiture {
     private $marque;
     private $modele;
@@ -176,9 +178,9 @@ $v2 = new Voiture("Citroen", "C4", 3);
 
 
 
+$array = ["Texte 1","Texte 2","Texte 3",1000,100.5,true,["Texte 4","Texte 5",555]];
 
-
-
+var_dump ($array);
 
 
 

@@ -11,6 +11,7 @@ A l’aide d’une boucle, afficher les informations des variables contenues dan
     $tableauValeurs = array(true,"texte",10,25.369,array("valeur1","valeur2"));
 
     foreach ($tableauValeurs as $valeur){
+     
         var_dump($valeur);
         echo "<br>";
     }

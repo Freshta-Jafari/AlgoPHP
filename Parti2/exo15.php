@@ -20,7 +20,7 @@ $email = "elan@elan-formation.fr";
 //$email = "ffff_idnl;od";
 
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "L'adresse e-mail $email est valide.";
+    echo "L'adresse e-mail  $email  est valide.";
 } else {
     echo "L'adresse e-mail '$email' n'est pas valide.";
 }

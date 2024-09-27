@@ -12,22 +12,27 @@ précisant le nom des champs associés.
 
 </p>
 <h2> Resultat </h2>
+
+
 <?php
-function afficherFormulaire ($nomsInput){
 
-    echo '<form>
-    
-    <label> Nom  :</label><br>
-    <input type = "texte" name = "nom"><br><br>
+function dynamicFormulaire ($elements){
+    echo '<div class="form-container">  <form method = "post" action = ""> <h4>Remplir le formulaire  : </h4> ';
 
-    <label> Prénom :</label><br>
-    <input type = "texte" name = "prenom"><br><br>
-
-    <label> Ville :</label><br>
-    <input type = "texte" name = "ville" >
-    
-    </form>';
+    foreach ($elements as $element => $value) {
+        echo '<label for = "'. $element .'">' . ucfirst($element) . ' : </label>';
+        echo '<input type = "'.$value.'" name = "'.$element.'" id = "'.$value.'">';
+        echo '<br><br>';
+    }
+    echo '<input type = "submit" value = "Envoyer">';
+    echo '</div>';
+    echo  '</form>';
 }
 
-$nomsInput = array("Nom", "Prénom", "Ville");
-afficherFormulaire("", $nomsInput);
+$formulaire  = [
+    'Nom'=> 'text',
+    'Prénom'=> 'text',
+    'Ville'=> 'text',
+    'Email'=> 'email',
+];
+dynamicFormulaire($formulaire );

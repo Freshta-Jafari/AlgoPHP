@@ -22,21 +22,23 @@ function afficherPaysCapitales($paysCapitales) {
 
     echo "<table border = '1' cellpadding = '10'>";
     echo "<tr>
+
         <th> No </th>
         <th> Payes </th>
         <th> Capitales </th>
-        <th> Line Wiki </th>
+      
         </tr>";
 
     $index = 1;
     foreach ($paysCapitales as $pay => $capitale) {
 
         echo "<tr>";
+
         echo "<td>" . $index . "</td>";
         echo "<td>" . strtoupper($pay) . "</td>";
-        echo "<td>" . $capitale . "</td>";
-        echo "<td>" . '<a href = "https://fr.wikipedia.org/wiki/Liste_des_capitales_du_monde" 
-        target = "_blank"> Line </a>' .  "</td>";
+        echo "<td>" . '<a href = "https://fr.wikipedia.org/wiki/Liste_des_capitales_du_monde"' .
+          'target = "_blank">' . urlencode($capitale)  .  '</a>' ."</td>";
+       
         echo "</tr>";
         $index++;
 

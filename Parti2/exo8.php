@@ -20,4 +20,4 @@ function afficherImageNFois ($urImage, $nombreFois){
     }
 }
 $urImage = 'http://my.mobirise.com/data/userpic/764.jpg';
-afficherImageNFois($urImage, 4);
+afficherImageNFois($urImage, 3);
