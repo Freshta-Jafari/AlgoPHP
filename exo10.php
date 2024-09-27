@@ -10,57 +10,55 @@ affiche à un utilisateur un rendu de monnaie en nombre de billets de 10 € et 
 
 <?php 
 
-function renduMonnaie($montantAPayer, $sommeVerse){
-    $rendu = $sommeVerse - $montantAPayer;
-    $restAPayer = $sommeVerse - $montantAPayer;
-
-
-    if ( $rendu < 0) {
-        echo "La somme versée est insuffisante.";
-        return;
-    }
-    $billets10 = 0;
-    $billets5 = 0;
-    $pieces2 = 0;
-    $pieces1 = 0;
+function renduMonnaie($montantAPayer, $sommeVersee) {
     
-    while ($rendu >= 10){
-        $rendu -= 10;
-        $billets10 ++;
+    $monnaieARendre = $sommeVersee - $montantAPayer;
+    $rendu = $sommeVersee - $montantAPayer;
+    $restAPayer = $sommeVersee - $montantAPayer;
 
-    }
-    while ($rendu >= 5){
-        $rendu -= 5;
-        $billets5 ++;
-
-    }
-    while ($rendu >= 2){
-        $rendu -= 2;
-        $pieces2 ++;
-
-    }
-    while ($rendu >= 1){
-        $rendu -= 1;
-        $pieces1 ++;
-
-    }
-   
     echo "Montant à payer : ". $montantAPayer . "€ <br>";
-    echo "Montant versé : ". $sommeVerse . "€ <br>";
+    echo "Montant versé : ". $sommeVersee . "€ <br>";
     echo "Reste à payer : ". $restAPayer . "€ <br>";
     echo "********************************************************** <br>";
-    echo "$billets10 billets de 10 € " ."-"."$billets5 billet de 5 € "
-    ."-"."$pieces2  pièce de 2 € " ."-". "$pieces1  pièce de 1 € <br>"; 
 
+    if ($monnaieARendre < 0) {
+        return "Montant insuffisant pour régler l'achat.";
+    } elseif ($monnaieARendre == 0) {
+        return "Pas de monnaie à rendre.";
+    }
+
+    
+    $rendu = [];
+
+   
+    $rendu['billets10'] = intdiv($monnaieARendre, 10);
+    $monnaieARendre %= 10;
+
+    
+    $rendu['billets5'] = intdiv($monnaieARendre, 5);
+    $monnaieARendre %= 5;
+
+    
+    $rendu['pieces2'] = intdiv($monnaieARendre, 2);
+    $monnaieARendre %= 2;
+
+    
+    $rendu['pieces1'] = $monnaieARendre;
+
+    
+    return "Rendu de monnaie : " .
+        ($rendu['billets10'] > 0 ? $rendu['billets10'] . " billet(s) de 10€, " : "") .
+        ($rendu['billets5'] > 0 ? $rendu['billets5'] . " billet(s) de 5€, " : "") .
+        ($rendu['pieces2'] > 0 ? $rendu['pieces2'] . " pièce(s) de 2€, " : "") .
+        ($rendu['pieces1'] > 0 ? $rendu['pieces1'] . " pièce(s) de 1€" : "");
+
+  
 }
 
-    $montantAPayer = 152;
-    $sommeVerse = 200;
-   
 
-renduMonnaie($montantAPayer, $sommeVerse);
-
-
+$montantAPayer = 152; 
+$sommeVersee = 200;   
+echo renduMonnaie($montantAPayer, $sommeVersee);
 
 
 

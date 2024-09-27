@@ -10,5 +10,5 @@ A partir de la phrase de l’exercice 1, écrire l’instruction permettant de r
 $phrase = "Notre formation DL commence aujourd'hui";
 $ancienne_phrase = $phrase;
 $phrase = str_replace("aujourd'hui","demain", $ancienne_phrase);
-echo "Anciene phrase : ".$ancienne_phrase."\n";
+echo "Anciene phrase : ".$ancienne_phrase."<br>";
 echo "Nouvelle phrase : ".$phrase;
